@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test-package:
@@ -32,4 +32,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
       - name: Build Example
-        run: bundle exec rake build:example:all
+        run: bundle exec rake build:example
