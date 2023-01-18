@@ -13,17 +13,17 @@ namespace :test do
 
     desc 'Tests the Lottie package for iOS'
     task :iOS do
-      xcodebuild('build -scheme Lottie -destination generic/platform=iOS -workspace Example/Example.xcworkspace')
+      xcodebuild('build -scheme Lottie -destination generic/platform=iOS -workspace Example/Example.xcworkspace -list')
     end
 
     desc 'Tests the Lottie package for macOS'
     task :macOS do
-      xcodebuild('build -scheme Lottie -destination generic/platform=macOS -workspace Example/Example.xcworkspace')
+      xcodebuild('build -scheme Lottie -destination generic/platform=macOS -workspace Example/Example.xcworkspace -list')
     end
 
     desc 'Tests the Lottie package for tvOS'
     task :tvOS do
-      xcodebuild('build -scheme Lottie -destination generic/platform=tvOS -workspace Example/Example.xcworkspace')
+      xcodebuild('build -scheme Lottie -destination generic/platform=tvOS -workspace Example/Example.xcworkspace -list')
     end
 
     desc 'Tests the Lottie package using Swift Package Manager directly'
@@ -35,11 +35,11 @@ end
 
 def xcodebuild(command)
   # Check if the mint tool is installed -- if so, pipe the xcodebuild output through xcbeautify
-  `which mint`
+  #`which mint`
 
-  if $?.success?
-    sh "set -o pipefail && xcodebuild #{command} | mint run thii/xcbeautify@0.10.2"
-  else
+  #if $?.success?
+  #  sh "set -o pipefail && xcodebuild #{command} | mint run thii/xcbeautify@0.10.2"
+  #else
     sh "xcodebuild #{command}"
-  end
+  #end
 end
