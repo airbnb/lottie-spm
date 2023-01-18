@@ -32,4 +32,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
       - name: Build Example
-        run: bundle exec rake build:example:all
+        run: bundle exec rake build:example
