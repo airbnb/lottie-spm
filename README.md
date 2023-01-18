@@ -25,3 +25,5 @@ Instead of downloading the full git history of Lottie and building it from sourc
 ### Other Package Managers
 
 Lottie is also available via Cocoapods, Carthage, and npm. You can also build Lottie directly from source, or manually integrate precompiled XCFrameworks into your project. More information is available in the main [lottie-ios](https://github.com/airbnb/lottie-ios#installing-lottie) repo.
+
+test
