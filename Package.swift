@@ -9,8 +9,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "Lottie",
-      url: "https://github.com/airbnb/lottie-ios/releases/download/4.0.1/Lottie.xcframework.zip",
-      checksum: "b6d8b0b81975d91965b8bb00cffb0eae4b3d94538b6950a90bc1366afd5d4239"),
+      url: "https://github.com/airbnb/lottie-ios/releases/download/4.1.0/Lottie.xcframework.zip",
+      checksum: "e954f5bfc5049196593c59c6eb21321016ffaba4417e9b4ece2a6a9eb54baa9a"),
     .testTarget(
       name: "LottieTests",
       dependencies: ["Lottie"],
