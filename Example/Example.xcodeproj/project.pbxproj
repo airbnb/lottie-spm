@@ -14,6 +14,7 @@
 		082D24222943A6F100DAAC5A /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 082D241A2943A6F000DAAC5A /* LottieLogo1.json */; };
 		082D24232943A6F100DAAC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082D241B2943A6F000DAAC5A /* AppDelegate.swift */; };
 		082D24252943A6F100DAAC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082D241D2943A6F000DAAC5A /* SceneDelegate.swift */; };
+		2E11D9B5297ADDDC00662020 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E11D9B4297ADDDC00662020 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E11D9B5297ADDDC00662020 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +46,7 @@
 			children = (
 				082D24132943A6F000DAAC5A /* Example */,
 				082D23EC2943A62100DAAC5A /* Products */,
+				2E11D9AD297ADBA900662020 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +73,13 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		2E11D9AD297ADBA900662020 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +97,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
+				2E11D9B4297ADDDC00662020 /* Lottie */,
 			);
 			productName = Example;
 			productReference = 082D23EB2943A62100DAAC5A /* Example.app */;
@@ -295,6 +306,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -322,6 +334,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -364,6 +377,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E11D9B4297ADDDC00662020 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 082D23E32943A62100DAAC5A /* Project object */;
 }
