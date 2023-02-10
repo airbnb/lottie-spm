@@ -1,7 +1,15 @@
 namespace :build do
   desc 'Builds the Lottie example app'
-  task :example do
-    xcodebuild('build -scheme Example -destination "platform=iOS Simulator,name=iPhone 8" -workspace Example/Example.xcworkspace')
+  namespace :example do
+    task all: ['iOS', 'macOS']
+
+    task :iOS do
+      xcodebuild('build -scheme "Example (iOS)" -destination "platform=iOS Simulator,name=iPhone 8" -workspace Example/Example.xcworkspace')
+    end
+
+    task :macOS do
+      xcodebuild('build -scheme "Example (macOS)" -destination platform=macOS -workspace Example/Example.xcworkspace')
+    end
   end
 end
 
