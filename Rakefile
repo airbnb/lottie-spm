@@ -1,7 +1,34 @@
 namespace :build do
   desc 'Builds the Lottie example app'
-  task :example do
-    xcodebuild('build -scheme Example -destination "platform=iOS Simulator,name=iPhone 8" -workspace Example/Example.xcworkspace')
+  namespace :example do
+    task all: ['iOS:simulator', 'iOS:device', 'macOS:arm64', 'macOS:x86_64', 'macCatalyst:arm64', 'macCatalyst:x86_64']
+
+    namespace :iOS do
+      task :simulator do
+        xcodebuild('build -scheme "Example (iOS)" -destination "platform=iOS Simulator,name=iPhone 8" -workspace Example/Example.xcworkspace')
+      end
+      task :device do
+        xcodebuild('build -scheme "Example (iOS)" -destination generic/platform=iOS -workspace Example/Example.xcworkspace')
+      end
+    end
+
+    namespace :macOS do
+      task :arm64 do
+        xcodebuild('build -scheme "Example (macOS)" -destination "platform=macOS,arch=arm64" -workspace Example/Example.xcworkspace')
+      end
+      task :x86_64 do
+        xcodebuild('build -scheme "Example (macOS)" -destination "platform=macOS,arch=x86_64" -workspace Example/Example.xcworkspace')
+      end
+    end
+
+    namespace :macCatalyst do
+      task :arm64 do
+        xcodebuild('build -scheme "Example (iOS)" -destination "platform=macOS,variant=Mac Catalyst,arch=arm64" -workspace Example/Example.xcworkspace')
+      end
+      task :x86_64 do
+        xcodebuild('build -scheme "Example (iOS)" -destination "platform=macOS,variant=Mac Catalyst,arch=x86_64" -workspace Example/Example.xcworkspace')
+      end
+    end
   end
 end
 
