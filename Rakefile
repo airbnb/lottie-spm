@@ -1,7 +1,11 @@
 namespace :build do
   desc 'Builds the Lottie example app'
   namespace :example do
+    desc 'Builds the Example apps for all supported platforms / architectures. Requires valid code signing.'
     task all: ['iOS:simulator', 'iOS:device', 'macOS:arm64', 'macOS:x86_64', 'macCatalyst:arm64', 'macCatalyst:x86_64']
+
+    desc 'Builds the Example app for platforms / architectures supported by Github Actions CI'
+    task github_actions: ['iOS:simulator', 'macOS:x86_64']
 
     namespace :iOS do
       task :simulator do
