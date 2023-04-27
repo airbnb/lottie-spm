@@ -4,13 +4,13 @@ import PackageDescription
 
 let package = Package(
   name: "Lottie",
-  platforms: [.iOS("11.0"), .macOS("10.10"), .tvOS("11.0")],
+  platforms: [.iOS("11.0"), .macOS("10.11"), .tvOS("11.0")],
   products: [.library(name: "Lottie", targets: ["Lottie", "_LottieStub"])],
   targets: [
     .binaryTarget(
       name: "Lottie",
-      url: "https://github.com/airbnb/lottie-ios/releases/download/4.1.3/Lottie.xcframework.zip",
-      checksum: "31ab682ec2c7b49e8a59458f7e4cfa027a07d8ba962df0ddcb95909ce5a9693d"),
+      url: "https://github.com/airbnb/lottie-ios/releases/download/4.2.0/Lottie.xcframework.zip",
+      checksum: "4db3dee208f6213e5c1681f2314c7ed96d466d9b9adfe5cd0030309515075443"),
     
     // Without at least one regular (non-binary) target, this package doesn't show up
     // in Xcode under "Frameworks, Libraries, and Embedded Content". That prevents
