@@ -9,7 +9,7 @@ namespace :build do
 
     namespace :iOS do
       task :simulator do
-        xcodebuild('build -scheme "Example (iOS)" -destination "platform=iOS Simulator,name=iPhone 8" -workspace Example/Example.xcworkspace')
+        xcodebuild('build -scheme "Example (iOS)" -destination "platform=iOS Simulator,name=iPhone SE (3rd generation)" -workspace Example/Example.xcworkspace')
       end
       task :device do
         xcodebuild('build -scheme "Example (iOS)" -destination generic/platform=iOS -workspace Example/Example.xcworkspace')
@@ -44,7 +44,7 @@ namespace :test do
 
     desc 'Tests the Lottie package for iOS'
     task :iOS do
-      xcodebuild('test -scheme Lottie -destination "platform=iOS Simulator,name=iPhone 8"')
+      xcodebuild('test -scheme Lottie -destination "platform=iOS Simulator,name=iPhone SE (3rd generation)"')
     end
 
     desc 'Tests the Lottie package for macOS'
