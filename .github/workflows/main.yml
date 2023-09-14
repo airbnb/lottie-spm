@@ -7,16 +7,31 @@ on:
     branches: [ main ]
 
 jobs:
-  test-package:
+  Test-package-macos-12:
     name: "Test Package"
     runs-on: macos-12
     strategy:
       fail-fast: false
       matrix:
         xcode:
-        - '13.2.1' # Swift 5.5
         - '13.4.1' # Swift 5.6
-        - '14.0.1' # Swift 5.7
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup
+        with:
+          xcode: ${{ matrix.xcode }}
+      - name: Build Package
+        run: bundle exec rake test:package:all
+
+  Test-package-macos-13:
+    name: "Test Package"
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+      matrix:
+        xcode:
+        - '14.2' # Swift 5.7
+        - '14.3' # Swift 5.8
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
