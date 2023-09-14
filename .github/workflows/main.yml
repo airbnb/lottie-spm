@@ -32,6 +32,7 @@ jobs:
         xcode:
         - '14.2' # Swift 5.7
         - '14.3' # Swift 5.8
+        - '15.0' # Swift 5.9
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
