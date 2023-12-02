@@ -9,8 +9,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "Lottie",
-      url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.3/Lottie.xcframework.zip",
-      checksum: "f7ab7a838bd707c53699406107bec56eb532a99082a017651a05290f9090771f"),
+      url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.4/Lottie.xcframework.zip",
+      checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca"),
     
     // Without at least one regular (non-binary) target, this package doesn't show up
     // in Xcode under "Frameworks, Libraries, and Embedded Content". That prevents
