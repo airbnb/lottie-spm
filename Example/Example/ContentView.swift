@@ -12,7 +12,7 @@ struct ContentView: View {
       Spacer()
 
       LottieView(animation: .named("LottieLogo1"))
-        .play(loopMode: .loop)
+        .playing(loopMode: .loop)
     }
   }
 }

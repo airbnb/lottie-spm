@@ -2,21 +2,22 @@
 
 import PackageDescription
 
-// TODO: Does this support Xcode 15.1 even though it was compiled with Xcode 15.2?
+// TODO: What Xcode versions are able to consume this?
 // Both versions use the exact same Swift version (5.9.2).
-#if compiler(>=5.9.2)
-/// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 15.2.
+//#if compiler(>=5.9)
+/// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 15.2 / Swift 5.9.2.
 let lottieXCFramework = Target.binaryTarget(
   name: "Lottie",
   path: "Lottie-vision-os-test-do-not-use.xcframework")
-#else
+
+//#else
 /// TODO: Update to Lottie 4.4.0
 /// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 14.1.
-let lottieXCFramework: Target.binaryTarget(
-      name: "Lottie",
-      url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.4/Lottie.xcframework.zip",
-      checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca")
-#endif
+//let lottieXCFramework = Target.binaryTarget(
+//      name: "Lottie",
+//      url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.4/Lottie.xcframework.zip",
+//      checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca")
+//#endif
 
 
 let package = Package(
