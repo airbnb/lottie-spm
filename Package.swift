@@ -16,7 +16,6 @@ let lottieXCFramework = Target.binaryTarget(
       checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca")
 #endif
 
-
 let package = Package(
   name: "Lottie",
   platforms: [.iOS("11.0"), .macOS("10.11"), .tvOS("11.0"), .custom("visionOS", versionString: "1.0")],
