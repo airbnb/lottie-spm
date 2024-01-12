@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Test-package-macos-13:
+  test-package-excluding-visionOS:
     name: "Test Package"
     runs-on: macos-13
     strategy:
@@ -17,8 +17,23 @@ jobs:
         - '14.2' # Swift 5.7
         - '14.3' # Swift 5.8
         - '15.0' # Swift 5.9
-        - '15.1' # Swift 5.9.2
-        - '15.2' # Swift 5.9.2 (first version with visionOS support, TODO: also test visionOS build)
+        - '15.1' # Swift 5.9
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup
+        with:
+          xcode: ${{ matrix.xcode }}
+      - name: Build Package
+        run: SKIP_VISION_OS=true bundle exec rake test:package:all
+
+  test-package-macos-13:
+    name: "Test Package"
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+      matrix:
+        xcode:
+        - '15.2' # Swift 5.9, first version with visionOS support
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
@@ -27,9 +42,31 @@ jobs:
       - name: Build Package
         run: bundle exec rake test:package:all
 
-  build-example:
+  build-example-excluding-visionOS:
     name: "Build Example App"
-    runs-on: macos-12
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+      matrix:
+        xcode:
+        - '14.2' # Swift 5.7
+        - '14.3' # Swift 5.8
+        - '15.0' # Swift 5.9
+        - '15.1' # Swift 5.9
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup
+      - name: Build Example
+        run: SKIP_VISION_OS=true bundle exec rake build:example:github_actions
+
+  build-example-macos-13:
+    name: "Build Example App"
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+      matrix:
+        xcode:
+        - '15.2' # Swift 5.9, first version with visionOS support
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
