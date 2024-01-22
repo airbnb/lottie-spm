@@ -56,6 +56,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
+        with:
+          xcode: ${{ matrix.xcode }}
       - name: Build Example
         run: SKIP_VISION_OS=true bundle exec rake build:example:github_actions
 
@@ -70,5 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
+        with:
+          xcode: ${{ matrix.xcode }}
       - name: Build Example
         run: bundle exec rake build:example:github_actions
