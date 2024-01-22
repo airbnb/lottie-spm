@@ -13,7 +13,7 @@ To install Lottie using [Swift Package Manager](https://github.com/apple/swift-p
 or you can add the following dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.3.4")
+.package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.4.0")
 ```
 
 ### Why is there a separate repo for Swift Package Manager support?
