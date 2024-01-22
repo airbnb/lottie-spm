@@ -8,6 +8,7 @@ GEM
 
 PLATFORMS
   universal-darwin-22
+  universal-darwin-23
 
 DEPENDENCIES
   rake (~> 13.0.0)!

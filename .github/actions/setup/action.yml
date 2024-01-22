@@ -1,5 +1,5 @@
 name: Setup
-description: Setup the Lottie iOS CI Environment
+description: Setup the Lottie SPM CI Environment
 inputs:
   xcode:
     description: The version of Xcode to select
