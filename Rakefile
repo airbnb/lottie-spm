@@ -84,22 +84,29 @@ def xcodebuild(command)
   # Check if the mint tool is installed -- if so, pipe the xcodebuild output through xcbeautify
   `which mint`
 
-  # TODO: REVERT THIS CHANGE, JUST TESTING WITHMORE VERBOSE LOGGING
-#  if $?.success?
-#    sh "set -o pipefail && xcodebuild #{command} | mint run thii/xcbeautify@0.10.2"
-#  else
+  if $?.success?
+    sh "set -o pipefail && xcodebuild #{command} | mint run thii/xcbeautify@0.10.2"
+  else
     sh "xcodebuild #{command}"
-#  end
+  end
 end
 
 # Runs the given code block, unless `SKIP_VISION_OS=true`.
-# This can be removed once CI only uses Xcode 15+.
+# TODO: Remove this once CI only uses Xcode 15.2+.
 def ifVisionOSEnabled
   if ENV["SKIP_VISION_OS"] == "true"
     puts "Skipping visionOS build"
   else
-    # Download visionOS SDK if necessary
-    xcodebuild("-downloadPlatform visionOS")
+    installVisionOSIfNecessary()
     yield
   end
+end
+
+def installVisionOSIfNecessary
+  # visionOS is unsupported by default on Intel, but we can override this
+  # https://github.com/actions/runner-images/issues/8144#issuecomment-1902072070
+  sh 'defaults write com.apple.dt.Xcode AllowUnsupportedVisionOSHost -bool YES'
+  sh 'defaults write com.apple.CoreSimulator AllowUnsupportedVisionOSHost -bool YES'
+
+  xcodebuild("-downloadPlatform visionOS")
 end
