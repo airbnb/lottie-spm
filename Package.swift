@@ -3,21 +3,19 @@
 import PackageDescription
 
 #if compiler(>=5.9)
-/// TODO: Update to Lottie 4.4.0
 /// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 15.2 / Swift 5.9.
-/// This XCFramework can be use by Xcode 15.0 and later.
+/// This XCFramework can be used by Xcode 15.0 and later.
 let lottieXCFramework = Target.binaryTarget(
   name: "Lottie",
-  url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.4/Lottie.xcframework.zip",
-  checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca")
+  url: "https://github.com/airbnb/lottie-ios/releases/download/4.4.0/Lottie-Xcode-15.2.xcframework.zip",
+  checksum: "2554036cb98d10d9d3e4c61fe17ba629f528e308323ff2d22b187f3a9557671e")
 #else
-/// TODO: Update to Lottie 4.4.0
 /// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 14.1 / Swift 5.7.
 /// This XCFramework bundle doesn't support visionOS, but does support Xcode 14.
 let lottieXCFramework = Target.binaryTarget(
   name: "Lottie",
-  url: "https://github.com/airbnb/lottie-ios/releases/download/4.3.4/Lottie.xcframework.zip",
-  checksum: "33c4efc87130f751e8a4bee1de5c557c6821566e05d0fa77cdcc1beae23858ca")
+  url: "https://github.com/airbnb/lottie-ios/releases/download/4.4.0/Lottie-Xcode-14.1.xcframework.zip",
+  checksum: "b1d46a0c3187783f24ee7988d6481cfdf17ebbeae45ccb9d1dae9ae43679a7c8")
 #endif
 
 let package = Package(
