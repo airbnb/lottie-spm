@@ -9,7 +9,7 @@ on:
 jobs:
   test-package-excluding-visionOS:
     name: "Test Package"
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       fail-fast: false
       matrix:
@@ -28,7 +28,7 @@ jobs:
 
   test-package-macos-13:
     name: "Test Package"
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       fail-fast: false
       matrix:
@@ -44,7 +44,7 @@ jobs:
 
   build-example-excluding-visionOS:
     name: "Build Example App"
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       fail-fast: false
       matrix:
@@ -63,7 +63,7 @@ jobs:
 
   build-example-macos-13:
     name: "Build Example App"
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       fail-fast: false
       matrix:
