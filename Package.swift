@@ -6,7 +6,7 @@ import PackageDescription
 /// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 15.2 / Swift 5.9.
 /// This XCFramework can be used by Xcode 15.0 and later.
 let lottieXCFramework = Target.binaryTarget(
-  name: "Lottie",
+  name: "LottieSPM",
   url: "https://github.com/airbnb/lottie-ios/releases/download/4.4.0/Lottie-Xcode-15.2.xcframework.zip",
   checksum: "2554036cb98d10d9d3e4c61fe17ba629f528e308323ff2d22b187f3a9557671e")
 #else
@@ -19,9 +19,9 @@ let lottieXCFramework = Target.binaryTarget(
 #endif
 
 let package = Package(
-  name: "Lottie",
+  name: "LottieSPM",
   platforms: [.iOS("11.0"), .macOS("10.11"), .tvOS("11.0"), .custom("visionOS", versionString: "1.0")],
-  products: [.library(name: "Lottie", targets: ["Lottie", "_LottieStub"])],
+  products: [.library(name: "LottieSPM", targets: ["LottieSPM", "_LottieStub"])],
   targets: [
     lottieXCFramework,
     
@@ -35,7 +35,7 @@ let package = Package(
     
     .testTarget(
       name: "LottieTests",
-      dependencies: ["Lottie"],
+      dependencies: ["LottieSPM"],
       path: "Tests")
   ])
 
