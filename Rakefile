@@ -97,11 +97,6 @@ def ifVisionOSEnabled
   if ENV["SKIP_VISION_OS"] == "true"
     puts "Skipping visionOS build"
   else
-    installVisionOSIfNecessary()
     yield
   end
-end
-
-def installVisionOSIfNecessary
-  xcodebuild("-downloadPlatform visionOS")
 end
