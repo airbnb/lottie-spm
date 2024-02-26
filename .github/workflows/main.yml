@@ -24,7 +24,7 @@ jobs:
         with:
           xcode: ${{ matrix.xcode }}
       - name: Build Package
-        run: SKIP_VISION_OS=true bundle exec rake test:package:all
+        run: SKIP_VISION_OS=true bundle exec rake test:package:github_actions
 
   test-package-macos-13:
     name: "Test Package"
@@ -40,7 +40,7 @@ jobs:
         with:
           xcode: ${{ matrix.xcode }}
       - name: Build Package
-        run: bundle exec rake test:package:all
+        run: bundle exec rake test:package:github_actions
 
   build-example-excluding-visionOS:
     name: "Build Example App"

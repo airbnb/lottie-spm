@@ -56,6 +56,10 @@ namespace :test do
     desc 'Tests the Lottie package for all supported platforms'
     task all: ['iOS', 'macOS', 'tvOS', 'visionOS']
 
+    # The visionOS tests time out in GitHub actions as of Feb 2024, so we exclude them for now.
+    desc 'Tests the Lottie package for all platforms supported by GitHub Actions'
+    task github_actions: ['iOS', 'macOS', 'tvOS']
+
     desc 'Tests the Lottie package for iOS'
     task :iOS do
       xcodebuild('test -scheme Lottie -destination "platform=iOS Simulator,name=iPhone SE (3rd generation)"')
