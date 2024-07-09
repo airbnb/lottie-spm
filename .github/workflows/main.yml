@@ -14,8 +14,6 @@ jobs:
       fail-fast: false
       matrix:
         xcode:
-        - '14.2' # Swift 5.7
-        - '14.3' # Swift 5.8
         - '15.0' # Swift 5.9
         - '15.1' # Swift 5.9
     steps:
@@ -49,8 +47,6 @@ jobs:
       fail-fast: false
       matrix:
         xcode:
-        - '14.2' # Swift 5.7
-        - '14.3' # Swift 5.8
         - '15.0' # Swift 5.9
         - '15.1' # Swift 5.9
     steps:
