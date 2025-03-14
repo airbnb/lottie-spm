@@ -16,6 +16,14 @@ or you can add the following dependency to your `Package.swift`:
 .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.1")
 ```
 
+and add it to your target like this:
+
+```swift
+dependencies: [
+  .product(name: "Lottie", package: "lottie-spm")
+]
+```
+
 ### Why is there a separate repo for Swift Package Manager support?
 
 The main git repository for [lottie-ios](https://github.com/airbnb/lottie-ios) is somewhat large (300+ MB), and Swift Package Manager always downloads the full repository with all git history. This [lottie-spm](https://github.com/airbnb/lottie-spm) repo is much smaller (less than 500kb), so can be downloaded much more quickly.
