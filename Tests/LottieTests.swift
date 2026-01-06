@@ -4,6 +4,7 @@
 import Lottie
 import XCTest
 
+@MainActor
 final class LottieTests: XCTestCase {
   func testCanImportLottie() {
     let animationView: Any? = LottieAnimationView()

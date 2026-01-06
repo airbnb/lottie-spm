@@ -1,18 +1,17 @@
-// swift-tools-version:5.6
+// swift-tools-version:6.0
 
 import PackageDescription
 
-/// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 15.2 / Swift 5.9.
-/// This XCFramework can be used by Xcode 15.0 and later.
+/// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 16.4.
 let lottieXCFramework = Target.binaryTarget(
   name: "Lottie",
-  url: "https://github.com/airbnb/lottie-ios/releases/download/4.5.2/Lottie.xcframework.zip",
-  checksum: "92206ff6af80373903767214ac16215838f6da11dedca789c0439299b46b6694"
+  url: "https://github.com/airbnb/lottie-ios/releases/download/4.6.0/Lottie.xcframework.zip",
+  checksum: "45e1c5d7040654fe498f9bc6de99d88ae0092714fb9f424949850e1ad66217e4"
 )
 
 let package = Package(
   name: "Lottie",
-  platforms: [.iOS("13.0"), .macOS("10.15"), .tvOS("13.0"), .custom("visionOS", versionString: "1.0")],
+  platforms: [.iOS("13.0"), .macOS("10.15"), .tvOS("13.0"), .visionOS("1.0")],
   products: [.library(name: "Lottie", targets: ["Lottie", "_LottieStub"])],
   targets: [
     lottieXCFramework,

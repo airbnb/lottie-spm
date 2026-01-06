@@ -13,7 +13,7 @@ To install Lottie using [Swift Package Manager](https://github.com/apple/swift-p
 or you can add the following dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.1")
+.package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.6.0")
 ```
 
 and add it to your target like this:

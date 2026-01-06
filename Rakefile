@@ -24,9 +24,7 @@ namespace :build do
 
     namespace :visionOS do
       task :simulator do
-        ifVisionOSEnabled {
-          xcodebuild('build -scheme "Example" -destination "platform=visionOS Simulator,name=Apple Vision Pro" -workspace Example/Example.xcworkspace')
-        }
+        xcodebuild('build -scheme "Example" -destination "platform=visionOS Simulator,OS=26.1,name=Apple Vision Pro" -workspace Example/Example.xcworkspace')
       end
     end
 
@@ -77,9 +75,7 @@ namespace :test do
 
     desc 'Tests the Lottie package for visionOS'
     task :visionOS do
-      ifVisionOSEnabled {
-        xcodebuild('test -scheme Lottie -destination "platform=visionOS Simulator,name=Apple Vision Pro"')
-      }
+      xcodebuild('test -scheme Lottie -destination "platform=visionOS Simulator,name=Apple Vision Pro"')
     end
   end
 end
@@ -92,15 +88,5 @@ def xcodebuild(command)
     sh "set -o pipefail && xcodebuild #{command} | mint run thii/xcbeautify@0.10.2"
   else
     sh "xcodebuild #{command}"
-  end
-end
-
-# Runs the given code block, unless `SKIP_VISION_OS=true`.
-# TODO: Remove this once CI only uses Xcode 15.2+.
-def ifVisionOSEnabled
-  if ENV["SKIP_VISION_OS"] == "true"
-    puts "Skipping visionOS build"
-  else
-    yield
   end
 end
