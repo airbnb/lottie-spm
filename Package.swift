@@ -5,8 +5,8 @@ import PackageDescription
 /// A precompiled XCFramework of the lottie-ios repo that was compiled with Xcode 16.4.
 let lottieXCFramework = Target.binaryTarget(
   name: "Lottie",
-  url: "https://github.com/airbnb/lottie-ios/releases/download/4.6.0/Lottie.xcframework.zip",
-  checksum: "45e1c5d7040654fe498f9bc6de99d88ae0092714fb9f424949850e1ad66217e4"
+  url: "https://github.com/airbnb/lottie-ios/releases/download/4.6.1/Lottie.xcframework.zip",
+  checksum: "03d3f3b085da9479bcab7b0ad4b6d75a88425d27bf3c7582698fddce14c9181f"
 )
 
 let package = Package(
